@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="zonage.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="10"/>
+        <CursorPos X="5" Y="38"/>
+        <UsageCount Value="201"/>
+        <Bookmarks Count="1"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="raygui.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="585"/>
+        <CursorPos X="10" Y="619"/>
+        <UsageCount Value="207"/>
+      </Unit>
+      <Unit>
+        <Filename Value="raylib.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1155"/>
+        <CursorPos X="3" Y="56"/>
+        <UsageCount Value="101"/>
+      </Unit>
+      <Unit>
+        <Filename Value="unavigation.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uNavigation"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="180"/>
+        <CursorPos X="5" Y="208"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uaffichage.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uAffichage"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="112"/>
+        <CursorPos Y="140"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uchargement.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uChargement"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="62"/>
+        <CursorPos X="5" Y="90"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uglobales.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uGlobales"/>
+        <EditorIndex Value="7"/>
+        <CursorPos X="5" Y="59"/>
+        <UsageCount Value="42"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="boutonclic.pas"/>
+        <UnitName Value="BoutonClic"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="14"/>
+        <CursorPos X="3" Y="22"/>
+        <UsageCount Value="214"/>
+      </Unit>
+      <Unit>
+        <Filename Value="initvariable.pas"/>
+        <UnitName Value="initVariable"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="435"/>
+        <CursorPos X="5" Y="488"/>
+        <UsageCount Value="208"/>
+      </Unit>
+      <Unit>
+        <Filename Value="hexagonlogic.pas"/>
+        <UnitName Value="HexagonLogic"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="122"/>
+        <CursorPos X="5" Y="293"/>
+        <UsageCount Value="169"/>
+      </Unit>
+      <Unit>
+        <Filename Value="detectionlogic.pas"/>
+        <UnitName Value="DetectionLogic"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="57"/>
+        <CursorPos X="5" Y="123"/>
+        <UsageCount Value="63"/>
+      </Unit>
+      <Unit>
+        <Filename Value="chargementcsv.pas"/>
+        <UnitName Value="Chargementcsv"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="213"/>
+      </Unit>
+      <Unit>
+        <Filename Value="traceastar.pas"/>
+        <UnitName Value="TraceAstar"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="19" Y="6"/>
+        <UsageCount Value="198"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\Ray4Laz\source\raylib.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="49"/>
+        <CursorPos X="14" Y="70"/>
+        <UsageCount Value="102"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\sysutils\sysutilh.inc"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="17" Y="25"/>
+        <UsageCount Value="87"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\math.pp"/>
+        <UnitName Value="Math"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="5"/>
+        <CursorPos X="2"/>
+        <UsageCount Value="103"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\AppData\Local\lazarus\onlinepackagemanager\packages\Ray4Laz\source\raygui.pas"/>
+        <EditorIndex Value="-1"/>
+        <CursorPos X="258" Y="583"/>
+        <UsageCount Value="16"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\objpas\sysutils\sysstrh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="223"/>
+        <CursorPos X="21" Y="223"/>
+        <UsageCount Value="91"/>
+      </Unit>
+      <Unit>
+        <Filename Value="..\..\..\..\AppData\Local\Temp\50db88c9-a4ad-4d5e-a473-f761c157eaa8_Sauvegarde Ashampoo ZIP-2025-06-17-22-38-47.zip.aa8\Users\Axel\Documents\FP\Pascaldemoraylib\tracevitesse\hexagongridflattop.lpr"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="7"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus4f\fpc\3.2.2\source\rtl\inc\mathh.inc"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="102"/>
+        <CursorPos X="5" Y="116"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uanalyse.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="uAnalyse"/>
+        <EditorIndex Value="4"/>
+        <CursorPos X="5" Y="179"/>
+        <UsageCount Value="41"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="uinterface.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="50"/>
+        <CursorPos Y="78"/>
+        <UsageCount Value="41"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="24">
+      <Position>
+        <Filename Value="zonage.lpr"/>
+        <Caret Line="2" Column="4"/>
+      </Position>
+      <Position>
+        <Filename Value="zonage.lpr"/>
+        <Caret Line="163" Column="49" TopLine="148"/>
+      </Position>
+      <Position>
+        <Filename Value="zonage.lpr"/>
+        <Caret Line="1233" Column="29" TopLine="663"/>
+      </Position>
+      <Position>
+        <Filename Value="zonage.lpr"/>
+        <Caret Line="306" Column="3" TopLine="292"/>
+      </Position>
+      <Position>
+        <Filename Value="uglobales.pas"/>
+        <Caret Line="30" Column="32" TopLine="20"/>
+      </Position>
+      <Position>
+        <Filename Value="zonage.lpr"/>
+        <Caret Line="6" Column="51"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="43" Column="39"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="63" Column="51" TopLine="16"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="43" Column="5" TopLine="29"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="65" Column="108" TopLine="52"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus4f\fpc\3.2.2\source\rtl\inc\mathh.inc"/>
+        <Caret Line="116" Column="14" TopLine="102"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="49" Column="39" TopLine="36"/>
+      </Position>
+      <Position>
+        <Filename Value="C:\lazarus4f\fpc\3.2.2\source\rtl\inc\mathh.inc"/>
+        <Caret Line="116" Column="7" TopLine="102"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="90" Column="5" TopLine="62"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="6" Column="40"/>
+      </Position>
+      <Position>
+        <Filename Value="unavigation.pas"/>
+        <Caret Line="101" Column="5"/>
+      </Position>
+      <Position>
+        <Filename Value="zonage.lpr"/>
+        <Caret Line="37" Column="5" TopLine="9"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="67" Column="19" TopLine="64"/>
+      </Position>
+      <Position>
+        <Filename Value="uaffichage.pas"/>
+        <Caret Line="106" Column="20" TopLine="102"/>
+      </Position>
+      <Position>
+        <Filename Value="zonage.lpr"/>
+        <Caret Line="15" Column="7" TopLine="9"/>
+      </Position>
+      <Position>
+        <Filename Value="uglobales.pas"/>
+        <Caret Line="3" Column="42"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="65" Column="9" TopLine="63"/>
+      </Position>
+      <Position>
+        <Filename Value="uaffichage.pas"/>
+        <Caret Line="105" Column="12" TopLine="103"/>
+      </Position>
+      <Position>
+        <Filename Value="unavigation.pas"/>
+        <Caret Line="164" Column="7" TopLine="162"/>
+      </Position>
+      <Position>
+        <Filename Value="zonage.lpr"/>
+        <Caret Line="11" Column="5" TopLine="10"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

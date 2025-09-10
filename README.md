@@ -14,4 +14,6 @@ Je vais sauvegarder chaque point de la zone avec ce numero de zone. il suffit de
 Maintenant le cout memoire. Programme lancé et les 2 maps chargés avant analyse : 54 Mo. Apres analyse, on a 191 Mo.  Je pense que c 'est raisonnable pour une image d'une
 taille de 4800x3400 pixels.
 
+A terminer, une sauvegarde pour ne plus utilisér l'image calque.
+
 

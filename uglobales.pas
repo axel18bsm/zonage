@@ -38,6 +38,8 @@ var
   regionMatrix: array of array of Integer;
   nombreRegions: Integer;
   analyseTerminee: Boolean;
+  voisinageRegions: array of array of Integer; // NOUVEAU : Pour chaque région, ses voisins
+
 
   // Messages
   messages: array[0..MAX_MESSAGES-1] of string;

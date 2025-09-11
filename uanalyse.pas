@@ -9,6 +9,8 @@ uses
 
 procedure AnalyserRegions;
 function ObtenirNumeroRegion(x, y: Integer): Integer;
+procedure DetecterVoisinage; // NOUVEAU
+function ObtenirVoisins(numeroRegion: Integer): string; // NOUVEAU
 
 implementation
 
@@ -21,7 +23,182 @@ type
     items: array of TPoint;
     count: Integer;
   end;
+procedure DetecterVoisinage;
+var
+  x, y, i, j: Integer;
+  regionActuelle, regionVoisine: Integer;
+  largeur, hauteur: Integer;
+  totalAdjacences: Integer;
+  voisinTrouve: Boolean;
+  testRegions: array of Integer;
+  compteurTest: Integer;
+begin
+  if not analyseTerminee then Exit;
 
+  WriteLn('=== DEBUG DETECTION VOISINAGE ===');
+
+  largeur := Length(regionMatrix);
+  hauteur := Length(regionMatrix[0]);
+
+  WriteLn('Matrice: ', largeur, 'x', hauteur);
+  WriteLn('Nombre regions: ', nombreRegions);
+
+  // Test: compter combien de pixels non-nuls
+  // Utilise un tableau dynamique basé sur nombreRegions
+  SetLength(testRegions, nombreRegions + 1);
+  for i := 0 to nombreRegions do
+    testRegions[i] := 0;
+
+  compteurTest := 0;
+
+  for y := 0 to hauteur - 1 do
+  begin
+    for x := 0 to largeur - 1 do
+    begin
+      regionActuelle := regionMatrix[x][y];
+      if regionActuelle > 0 then
+      begin
+        Inc(compteurTest);
+        if regionActuelle <= nombreRegions then
+          Inc(testRegions[regionActuelle]);
+      end;
+    end;
+  end;
+
+  WriteLn('Pixels non-nuls: ', compteurTest);
+  for i := 1 to nombreRegions do
+    WriteLn('Region ', i, ': ', testRegions[i], ' pixels');
+
+  AjouterMessage('Detection du voisinage...');
+
+  // Initialiser le tableau global voisinageRegions
+  SetLength(voisinageRegions, nombreRegions + 1);
+  for i := 1 to nombreRegions do
+    SetLength(voisinageRegions[i], 0);
+
+  totalAdjacences := 0;
+
+  // Parcourir avec la nouvelle logique
+  for y := 0 to hauteur - 1 do
+  begin
+    for x := 0 to largeur - 1 do
+    begin
+      regionActuelle := regionMatrix[x][y];
+
+      if regionActuelle > 0 then
+      begin
+        // Vérifier voisin droit - chercher la prochaine région non-nulle
+        if x < largeur - 1 then
+        begin
+          j := x + 1;
+          while (j < largeur) and (regionMatrix[j][y] = 0) do
+            Inc(j);
+
+          if j < largeur then
+            regionVoisine := regionMatrix[j][y]
+          else
+            regionVoisine := 0;
+
+          if (regionVoisine > 0) and (regionVoisine <> regionActuelle) and (j - x <= 5) then // Max 5 pixels noirs entre régions
+          begin
+            // Debug première adjacence trouvée
+            if totalAdjacences = 0 then
+              WriteLn('PREMIERE adjacence: region ', regionActuelle, ' <-> ', regionVoisine, ' en (', x, ',', y, ') distance=', j-x);
+
+            // Vérifier si cette adjacence n'existe pas déjà
+            voisinTrouve := False;
+            for i := 0 to Length(voisinageRegions[regionActuelle]) - 1 do
+            begin
+              if voisinageRegions[regionActuelle][i] = regionVoisine then
+              begin
+                voisinTrouve := True;
+                Break;
+              end;
+            end;
+
+            if not voisinTrouve then
+            begin
+              SetLength(voisinageRegions[regionActuelle], Length(voisinageRegions[regionActuelle]) + 1);
+              voisinageRegions[regionActuelle][Length(voisinageRegions[regionActuelle]) - 1] := regionVoisine;
+
+              SetLength(voisinageRegions[regionVoisine], Length(voisinageRegions[regionVoisine]) + 1);
+              voisinageRegions[regionVoisine][Length(voisinageRegions[regionVoisine]) - 1] := regionActuelle;
+
+              Inc(totalAdjacences);
+            end;
+          end;
+        end;
+
+        // Vérifier voisin bas - chercher la prochaine région non-nulle
+        if y < hauteur - 1 then
+        begin
+          j := y + 1;
+          while (j < hauteur) and (regionMatrix[x][j] = 0) do
+            Inc(j);
+
+          if j < hauteur then
+            regionVoisine := regionMatrix[x][j]
+          else
+            regionVoisine := 0;
+
+          if (regionVoisine > 0) and (regionVoisine <> regionActuelle) and (j - y <= 5) then // Max 5 pixels noirs entre régions
+          begin
+            // Vérifier si cette adjacence n'existe pas déjà
+            voisinTrouve := False;
+            for i := 0 to Length(voisinageRegions[regionActuelle]) - 1 do
+            begin
+              if voisinageRegions[regionActuelle][i] = regionVoisine then
+              begin
+                voisinTrouve := True;
+                Break;
+              end;
+            end;
+
+            if not voisinTrouve then
+            begin
+              SetLength(voisinageRegions[regionActuelle], Length(voisinageRegions[regionActuelle]) + 1);
+              voisinageRegions[regionActuelle][Length(voisinageRegions[regionActuelle]) - 1] := regionVoisine;
+
+              SetLength(voisinageRegions[regionVoisine], Length(voisinageRegions[regionVoisine]) + 1);
+              voisinageRegions[regionVoisine][Length(voisinageRegions[regionVoisine]) - 1] := regionActuelle;
+
+              Inc(totalAdjacences);
+            end;
+          end;
+        end;
+      end;
+    end;
+  end;
+
+  WriteLn('Total adjacences trouvees: ', totalAdjacences);
+  WriteLn('=== FIN DEBUG ===');
+
+  AjouterMessage('DEBUG: ' + IntToStr(totalAdjacences) + ' adjacences trouvees');
+  AjouterMessage('Voisinage detecte pour ' + IntToStr(nombreRegions) + ' regions');
+
+  // Libérer la mémoire du tableau temporaire
+  SetLength(testRegions, 0);
+end;
+
+ function ObtenirVoisins(numeroRegion: Integer): string;
+var
+  i: Integer;
+  listeVoisins: string;
+begin
+  Result := '';
+
+  if (numeroRegion < 1) or (numeroRegion > nombreRegions) then Exit;
+  if Length(voisinageRegions) <= numeroRegion then Exit;
+
+  listeVoisins := '';
+  for i := 0 to Length(voisinageRegions[numeroRegion]) - 1 do
+  begin
+    if listeVoisins <> '' then listeVoisins := listeVoisins + ', ';
+    listeVoisins := listeVoisins + IntToStr(voisinageRegions[numeroRegion][i]);
+  end;
+
+  Result := listeVoisins;
+end;
 procedure StackPush(var stack: TStack; point: TPoint);
 begin
   if stack.count >= Length(stack.items) then
@@ -151,6 +328,9 @@ begin
   analyseTerminee := True;
 
   AjouterMessage('Analyse terminee: ' + IntToStr(nombreRegions) + ' regions');
+
+  // NOUVEAU : Détecter le voisinage après l'analyse
+  DetecterVoisinage;
 
   // Libérer l'image temporaire
   UnloadImage(image);

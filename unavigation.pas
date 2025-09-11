@@ -121,8 +121,8 @@ begin
         begin
           numeroRegion := ObtenirNumeroRegion(Round(cartePos.x), Round(cartePos.y));
           if numeroRegion > 0 then
-            message := 'Region: ' + IntToStr(numeroRegion) + ' | Carte(' +
-                      IntToStr(Round(cartePos.x)) + ',' + IntToStr(Round(cartePos.y)) + ')'
+            message := 'Region: ' + IntToStr(numeroRegion) + ' | Voisins: [' +
+                      ObtenirVoisins(numeroRegion) + ']'
           else
             message := 'Zone noire ou limite | Carte(' +
                       IntToStr(Round(cartePos.x)) + ',' + IntToStr(Round(cartePos.y)) + ')';

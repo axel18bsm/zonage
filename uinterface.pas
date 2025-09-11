@@ -22,7 +22,7 @@ var
   boutonRect: TRectangle;
   yPos: Integer;
 begin
-  yPos := 550; // Position Y de départ pour les boutons
+  yPos := 550;
 
   // Bouton "Analyser Régions"
   boutonRect := RectangleCreate(BOUTON_X, yPos, BOUTON_LARGEUR, BOUTON_HAUTEUR);
@@ -32,6 +32,21 @@ begin
     GuiButton(boutonRect, 'Analyser Regions (Non disponible)');
 
   Inc(yPos, 40);
+
+  // Bouton "Sauvegarder Projet"
+  boutonRect := RectangleCreate(BOUTON_X, yPos, BOUTON_LARGEUR, BOUTON_HAUTEUR);
+  if analyseTerminee then
+    GuiButton(boutonRect, 'Sauvegarder Projet')
+  else
+    GuiButton(boutonRect, 'Sauvegarder (Non disponible)');
+
+  Inc(yPos, 40);
+
+  // Bouton "Charger Projet"
+  boutonRect := RectangleCreate(BOUTON_X, yPos, BOUTON_LARGEUR, BOUTON_HAUTEUR);
+  GuiButton(boutonRect, 'Charger Projet');
+
+  Inc(yPos, 50);
 
   // Affichage du statut
   if analyseTerminee then
@@ -49,12 +64,13 @@ procedure GererClicsBoutons;
 var
   boutonRect: TRectangle;
   mousePos: TVector2;
+  nomProjet: string;
 begin
   mousePos := GetMousePosition();
 
   if IsMouseButtonPressed(MOUSE_BUTTON_LEFT) then
   begin
-    // Bouton "Analyser Régions"
+    // Bouton "Analyser Régions" (Y=550)
     boutonRect := RectangleCreate(BOUTON_X, 550, BOUTON_LARGEUR, BOUTON_HAUTEUR);
     if CheckCollisionPointRec(mousePos, boutonRect) then
     begin
@@ -70,6 +86,31 @@ begin
       begin
         AjouterMessage('Analyse deja effectuee');
       end;
+    end;
+
+    // Bouton "Sauvegarder Projet" (Y=590)
+    boutonRect := RectangleCreate(BOUTON_X, 590, BOUTON_LARGEUR, BOUTON_HAUTEUR);
+    if CheckCollisionPointRec(mousePos, boutonRect) then
+    begin
+      if analyseTerminee then
+      begin
+        nomProjet := ObtenirNomCarte();
+        if nomProjet = '' then nomProjet := 'carte_sans_nom';
+        SauvegarderProjet(nomProjet);
+      end
+      else
+      begin
+        AjouterMessage('Aucune analyse a sauvegarder');
+      end;
+    end;
+
+    // Bouton "Charger Projet" (Y=630)
+    boutonRect := RectangleCreate(BOUTON_X, 630, BOUTON_LARGEUR, BOUTON_HAUTEUR);
+    if CheckCollisionPointRec(mousePos, boutonRect) then
+    begin
+      // Pour l'instant, charger le projet par défaut
+      nomProjet := 'hongrie2vrai';
+      ChargerProjet(nomProjet);
     end;
   end;
 end;

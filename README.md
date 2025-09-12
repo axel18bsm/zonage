@@ -14,8 +14,9 @@ Je vais sauvegarder chaque point de la zone avec ce numero de zone. il suffit de
 Maintenant le cout memoire. Programme lancé et les 2 maps chargés avant analyse : 54 Mo. Apres analyse, on a 191 Mo.  Je pense que c 'est raisonnable pour une image d'une
 taille de 4800x3400 pixels.
 
-la sauvegarde, la restauration du un projet est faite. Le voisinage se fait automatiquement
+la sauvegarde, la restauration du un projet est faite. Le voisinage se fait automatiquement et est sauvegardé automatiquement.
+Apres analyse et sauvegarde, il est possible de reprendre  et recharger le projet.
 
-A terminer, une sauvegarde  du voisinage et sa reatauration.
+Programme terminé: installation tout mettre dans un répertoire, respecter les chemins. Lancez zonage.exe.
 
 

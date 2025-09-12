@@ -53,9 +53,10 @@
         <Filename Value="uchargement.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uChargement"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="12"/>
-        <CursorPos X="34" Y="16"/>
+        <TopLine Value="435"/>
+        <CursorPos X="5" Y="462"/>
         <UsageCount Value="45"/>
         <Loaded Value="True"/>
       </Unit>
@@ -64,7 +65,6 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uGlobales"/>
         <EditorIndex Value="7"/>
-        <TopLine Value="22"/>
         <CursorPos Y="42"/>
         <UsageCount Value="45"/>
         <Loaded Value="True"/>
@@ -73,10 +73,9 @@
         <Filename Value="uanalyse.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uAnalyse"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="4"/>
-        <TopLine Value="154"/>
-        <CursorPos X="5" Y="181"/>
+        <TopLine Value="307"/>
+        <CursorPos X="45" Y="187"/>
         <UsageCount Value="44"/>
         <Loaded Value="True"/>
       </Unit>
@@ -183,14 +182,6 @@
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="zonage.lpr"/>
-        <Caret Line="6" Column="51"/>
-      </Position>
-      <Position>
-        <Filename Value="uchargement.pas"/>
-        <Caret Line="43" Column="39"/>
-      </Position>
       <Position>
         <Filename Value="uchargement.pas"/>
         <Caret Line="63" Column="51" TopLine="16"/>
@@ -302,6 +293,14 @@
       <Position>
         <Filename Value="uanalyse.pas"/>
         <Caret Line="255" Column="5" TopLine="228"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="141" Column="5" TopLine="115"/>
+      </Position>
+      <Position>
+        <Filename Value="uchargement.pas"/>
+        <Caret Line="331" Column="5" TopLine="304"/>
       </Position>
     </JumpHistory>
     <RunParams>

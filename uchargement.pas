@@ -14,8 +14,173 @@ procedure SauvegarderProjet(const nomProjet: string);
 procedure ChargerProjet(const nomProjet: string);
 function ListerProjets: TStringList;
 function ObtenirNomCarte: string;
+procedure SauvegarderVoisinage(const nomFichier: string);
+procedure ChargerVoisinage(const nomFichier: string);
 
 implementation
+procedure ChargerVoisinage(const nomFichier: string);
+var
+  fichier: TextFile;
+  ligne, versionStr, partieVoisins: string;
+  i, j, regionId, voisinId, nbRegionsVoisinage: Integer;
+  nomFichierVoisinage: string;
+  colonPos, virgulePos, startPos: Integer;
+  voisinsTrouves: array of Integer;
+  nbVoisins: Integer;
+begin
+  // Créer le nom du fichier voisinage
+  nomFichierVoisinage := ChangeFileExt(nomFichier, '.voi');
+
+  if not FileExists(nomFichierVoisinage) then
+  begin
+    AjouterMessage('Fichier voisinage inexistant: ' + ExtractFileName(nomFichierVoisinage));
+    Exit;
+  end;
+
+  try
+    AssignFile(fichier, nomFichierVoisinage);
+    Reset(fichier);
+
+    // Lire l'en-tête
+    ReadLn(fichier, versionStr);
+    if versionStr <> 'VOISINAGE_V1' then
+    begin
+      AjouterMessage('Version fichier voisinage non supportée');
+      CloseFile(fichier);
+      Exit;
+    end;
+
+    ReadLn(fichier, nbRegionsVoisinage);
+
+    // Vérifier la cohérence avec les données chargées
+    if nbRegionsVoisinage <> nombreRegions then
+    begin
+      AjouterMessage('Incohérence: ' + IntToStr(nbRegionsVoisinage) + ' regions voisinage vs ' + IntToStr(nombreRegions) + ' regions données');
+      CloseFile(fichier);
+      Exit;
+    end;
+
+    // Initialiser le tableau voisinage
+    SetLength(voisinageRegions, nombreRegions + 1);
+    for i := 1 to nombreRegions do
+      SetLength(voisinageRegions[i], 0);
+
+    SetLength(voisinsTrouves, 100); // Buffer temporaire
+
+    // Lire chaque ligne de voisinage
+    while not Eof(fichier) do
+    begin
+      ReadLn(fichier, ligne);
+
+      // Parser la ligne "regionId:voisin1,voisin2,voisin3"
+      colonPos := Pos(':', ligne);
+      if colonPos > 0 then
+      begin
+        regionId := StrToIntDef(Copy(ligne, 1, colonPos - 1), 0);
+
+        if (regionId > 0) and (regionId <= nombreRegions) then
+        begin
+          // Extraire la liste des voisins après le ':'
+          partieVoisins := Copy(ligne, colonPos + 1, Length(ligne) - colonPos);
+
+          if Length(partieVoisins) > 0 then
+          begin
+            nbVoisins := 0;
+            startPos := 1;
+
+            // Parser manuellement les voisins séparés par des virgules
+            repeat
+              virgulePos := Pos(',', Copy(partieVoisins, startPos, Length(partieVoisins)));
+
+              if virgulePos > 0 then
+              begin
+                voisinId := StrToIntDef(Copy(partieVoisins, startPos, virgulePos - 1), 0);
+                virgulePos := startPos + virgulePos - 1;
+              end
+              else
+              begin
+                voisinId := StrToIntDef(Copy(partieVoisins, startPos, Length(partieVoisins)), 0);
+              end;
+
+              if voisinId > 0 then
+              begin
+                if nbVoisins >= Length(voisinsTrouves) then
+                  SetLength(voisinsTrouves, Length(voisinsTrouves) + 50);
+                voisinsTrouves[nbVoisins] := voisinId;
+                Inc(nbVoisins);
+              end;
+
+              if virgulePos > 0 then
+                startPos := virgulePos + 1
+              else
+                Break;
+
+            until startPos > Length(partieVoisins);
+
+            // Copier dans le tableau final
+            SetLength(voisinageRegions[regionId], nbVoisins);
+            for j := 0 to nbVoisins - 1 do
+              voisinageRegions[regionId][j] := voisinsTrouves[j];
+          end;
+        end;
+      end;
+    end;
+
+    SetLength(voisinsTrouves, 0);
+    CloseFile(fichier);
+    AjouterMessage('Voisinage charge: ' + IntToStr(nombreRegions) + ' regions');
+
+  except
+    on E: Exception do
+    begin
+      AjouterMessage('ERREUR chargement voisinage: ' + E.Message);
+      if TTextRec(fichier).Mode = fmInput then
+        CloseFile(fichier);
+    end;
+  end;
+end;
+
+procedure SauvegarderVoisinage(const nomFichier: string);
+var
+  fichier: TextFile;
+  i, j: Integer;
+  nomFichierVoisinage: string;
+begin
+  // Créer le nom du fichier voisinage (.voi)
+  nomFichierVoisinage := ChangeFileExt(nomFichier, '.voi');
+
+  try
+    AssignFile(fichier, nomFichierVoisinage);
+    Rewrite(fichier);
+
+    // Écrire l'en-tête
+    WriteLn(fichier, 'VOISINAGE_V1');
+    WriteLn(fichier, nombreRegions);
+
+    // Écrire le voisinage de chaque région
+    for i := 1 to nombreRegions do
+    begin
+      Write(fichier, i, ':');
+      for j := 0 to Length(voisinageRegions[i]) - 1 do
+      begin
+        Write(fichier, voisinageRegions[i][j]);
+        if j < Length(voisinageRegions[i]) - 1 then
+          Write(fichier, ',');
+      end;
+      WriteLn(fichier);
+    end;
+
+    CloseFile(fichier);
+    AjouterMessage('Voisinage sauvegarde: ' + ExtractFileName(nomFichierVoisinage));
+
+  except
+    on E: Exception do
+    begin
+      AjouterMessage('ERREUR sauvegarde voisinage: ' + E.Message);
+    end;
+  end;
+end;
+
 
 procedure CreerRepertoire(const chemin: string);
 begin
@@ -158,6 +323,10 @@ begin
   SauvegarderDonneesRegions(cheminProjet + DirectorySeparator + 'regions.dat');
   SauvegarderMatriceRegions(cheminProjet + DirectorySeparator + 'regions.matrix');
 
+  // AJOUT: Sauvegarder le voisinage si disponible
+  if Length(voisinageRegions) > 0 then
+    SauvegarderVoisinage(cheminProjet + DirectorySeparator + 'regions.dat');
+
   AjouterMessage('Projet sauve: ' + nomProjet);
 end;
 
@@ -280,6 +449,10 @@ begin
      ChargerMatriceRegions(cheminProjet + DirectorySeparator + 'regions.matrix') then
   begin
     analyseTerminee := True;
+
+    // AJOUT: Charger le voisinage si disponible
+    ChargerVoisinage(cheminProjet + DirectorySeparator + 'regions.dat');
+
     AjouterMessage('Projet charge: ' + nomProjet + ' (' + IntToStr(nombreRegions) + ' regions)');
   end
   else

@@ -1,3 +1,6 @@
+Currently we have 2 systems to click  a numerical 2D paper map  
+
+1st System :
 On prend une carte de ce style
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/abed858e-c45e-47e2-b97d-fe932b1c3fc2" />
 
@@ -18,5 +21,9 @@ la sauvegarde, la restauration du un projet est faite. Le voisinage se fait auto
 Apres analyse et sauvegarde, il est possible de reprendre  et recharger le projet.
 
 Programme terminé: installation tout mettre dans un répertoire, respecter les chemins. Lancez zonage.exe.
+
+2nd system  the new one :
+
+
 
 

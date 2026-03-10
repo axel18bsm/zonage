@@ -24,6 +24,21 @@ Programme terminé: installation tout mettre dans un répertoire, respecter les 
 
 2nd system  the new one :
 
+1)create a qgis project, load a 2d map and create another couch file over the mmap.
+
+<img width="960" height="515" alt="image" src="https://github.com/user-attachments/assets/cbb593a2-dac9-4621-a2ac-5ba802106c49" />
+
+2)use the tools to create new regions ( in violet color) 
+3) export the data of the tiled couch in json system.poc_qgz.geoson.
+
+4)Put your map2d and the geoson file in the same directory.
+5)Launch zonehongrie.lpr
+6) at the first launch, the program is converting the geoson file in csv file with vector to use by raylib and display the map. You can click on the map to find the zone.
+7)At the second launch, the program load csv file and display the map, you can click on it.
+
+you can seee an sample with the zone 47 clicked !
+<img width="1365" height="940" alt="image" src="https://github.com/user-attachments/assets/33b1316f-7191-4aed-b944-87b811d4e470" />
+
 
 
 

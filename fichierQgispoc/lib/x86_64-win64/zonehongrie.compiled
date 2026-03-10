@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus4f\fpc\3.2.2\bin\x86_64-win64\fpc.exe" Date="1549053250"/>
+  <Params Value="-MObjFPC -Scghi -O1 -gw3 -gl -l -vewnhibq -FiC:\Users\Axel\Documents\FP\Pascaldemoraylib\fichierQgispoc\lib\x86_64-win64 -FuC:\Users\Axel\Documents\FP\Pascaldemoraylib\fichierQgispoc\ -FuC:\Users\Axel\Documents\FP\Pascaldemoraylib\TestConversionPascal -FUC:\Users\Axel\Documents\FP\Pascaldemoraylib\fichierQgispoc\lib\x86_64-win64\ -FEC:\Users\Axel\Documents\FP\Pascaldemoraylib\fichierQgispoc\ -oC:\Users\Axel\Documents\FP\Pascaldemoraylib\fichierQgispoc\zonehongrie.exe zonehongrie.lpr"/>
+</CONFIG>

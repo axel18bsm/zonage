@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="12"/>
+    <BuildModes Active="Default"/>
+    <Units>
+      <Unit>
+        <Filename Value="zonehongrie.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="585"/>
+        <CursorPos X="47" Y="756"/>
+        <UsageCount Value="25"/>
+        <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="raylib.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="1533"/>
+        <CursorPos X="156" Y="1541"/>
+        <UsageCount Value="13"/>
+        <Loaded Value="True"/>
+      </Unit>
+    </Units>
+    <JumpHistory HistoryIndex="28">
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="259" TopLine="250"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="261" TopLine="250"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="263" TopLine="250"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="264" TopLine="250"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="252" TopLine="248"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="386" TopLine="374"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="252" TopLine="240"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="386" TopLine="374"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="705" TopLine="692"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="712" Column="2" TopLine="692"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="700" TopLine="692"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="701" TopLine="692"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="253" TopLine="242"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="254" TopLine="242"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="255" TopLine="242"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="257" TopLine="242"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="259" TopLine="242"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="261" TopLine="242"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="267" TopLine="255"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="268" TopLine="255"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="270" TopLine="255"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="271" TopLine="255"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="273" Column="49" TopLine="255"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="815" Column="23" TopLine="803"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="822" Column="5" TopLine="798"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="227" Column="73" TopLine="223"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="6" Column="3"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="14" Column="30"/>
+      </Position>
+      <Position>
+        <Filename Value="zonehongrie.lpr"/>
+        <Caret Line="788" Column="36" TopLine="776"/>
+      </Position>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes ActiveMode=""/>
+    </RunParams>
+    <HistoryLists>
+      <List Name="LaunchingApplication" Type="File" Count="1">
+        <Item1 Value="C:\WINDOWS\system32\cmd.exe /C ${TargetCmdLine}"/>
+      </List>
+    </HistoryLists>
+  </ProjectSession>
+</CONFIG>
